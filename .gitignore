@@ -1,0 +1,17 @@
+# 忽略依赖与产物
+node_modules/
+dist/
+release/
+data/
+*.log
+*.part
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+*.tmp
+*_test.js
+tmp/
+
+# 内部交接文档
+HANDOFF-*.md
