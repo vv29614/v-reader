@@ -7,4 +7,4 @@ window.loadPdfJs = async function loadPdfJs() {
   return lib;
 };
 
-await import('./app.js?v=20261107g');
+await import('./app.js?v=20261107reader');

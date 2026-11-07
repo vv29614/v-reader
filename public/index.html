@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>V 编辑器</title>
+<title>V 阅读器</title>
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="css/app.css">
 <link id="hljs-light" rel="stylesheet" href="vendor/hljs-light.css">
@@ -78,7 +78,7 @@
 <!-- ═══════════ 文件列表（首页） ═══════════ -->
 <section id="shelf-view" class="shelf-view">
   <header class="shelf-head">    <div class="brand">
-      <h1 class="brand-name">V 编辑器</h1>
+      <h1 class="brand-name">V 阅读器</h1>
     </div>
     <div class="shelf-actions">
       <div class="searchbox">
@@ -508,7 +508,7 @@
       <button class="btn tiny ghost" id="btn-assoc" style="width:100%;justify-content:center">
         <svg class="ic"><use href="#i-book"/></svg>加入右键「打开方式」
       </button>
-      <div class="set-hint">写入当前用户的注册表（HKCU），之后右键 PDF / EPUB / MD 等文件就能 V 编辑器打开。想设为默认，在 Windows 设置 → 默认应用里选一次即可。</div>
+      <div class="set-hint">写入当前用户的注册表（HKCU），之后右键 PDF / EPUB / MD 等文件就能 V 阅读器打开。想设为默认，在 Windows 设置 → 默认应用里选一次即可。</div>
     </section>
 
     <section class="set-group">
@@ -526,7 +526,8 @@
       <div class="keymap-editor" id="keymap-editor"></div>
       <div class="set-hint">点右侧的键位即可重新录制；录制时按 Esc 取消。支持 Ctrl / Alt / Shift 组合。</div>
       <button class="btn tiny ghost" id="btn-keymap-reset" style="margin-top:8px">恢复默认</button>
-    
+    </section>
+
     <section class="set-group">
       <label class="set-label">帮助</label>
       <button class="btn ghost" id="btn-guide-settings" style="width:100%">用法说明</button>
@@ -694,6 +695,6 @@
 <script src="vendor/marked.umd.js"></script>
 <script src="vendor/purify.min.js"></script>
 <script src="vendor/hljs.min.js"></script>
-<script type="module" src="js/boot.js?v=20261107d"></script>
+<script type="module" src="js/boot.js?v=20261107reader"></script>
 </body>
 </html>

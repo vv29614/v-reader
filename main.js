@@ -8,6 +8,17 @@ const gotLock = app.requestSingleInstanceLock();
 if (!gotLock) {
   app.quit();
 } else {
+  /* 数据目录：沿用旧目录名「V编辑器」（改名后仍读旧的，避免用户书库/笔记丢失） */
+  (function pinUserDataDir() {
+    try {
+      const appData = app.getPath('appData');
+      const oldDir = path.join(appData, 'V编辑器');
+      const newDir = path.join(appData, 'V阅读器');
+      const target = fs.existsSync(oldDir) ? oldDir : newDir;
+      app.setPath('userData', target);
+    } catch { }
+  })();
+
   /* 数据目录策略
      - 开发（未打包）：源码目录旁的 data/
      - 打包安装版：用户数据目录下的 data/（D:\Roaming\V编辑器\data）
@@ -54,15 +65,15 @@ if (!gotLock) {
       const shelfFile = path.join(DATA_DIR, 'shelf.json');
       fs.mkdirSync(libDir, { recursive: true });
       if (fs.existsSync(shelfFile)) return;
-      const src = path.join(__dirname, 'welcome', '欢迎使用V 编辑器.md');
+      const src = path.join(__dirname, 'welcome', '欢迎使用纸间.md');
       if (!fs.existsSync(src)) return;
-      const dst = path.join(libDir, '欢迎使用V 编辑器.md');
+      const dst = path.join(libDir, '欢迎使用纸间.md');
       fs.copyFileSync(src, dst);
       const st = fs.statSync(dst);
       fs.writeFileSync(shelfFile, JSON.stringify({
         books: [{
           id: 'welcome00001',
-          name: '欢迎使用V 编辑器.md',
+          name: '欢迎使用纸间.md',
           path: dst,
           ext: '.md',
           kind: 'markdown',
@@ -94,7 +105,7 @@ if (!gotLock) {
       minHeight: 640,
       show: false,
       backgroundColor: '#efe9dc',
-      title: 'V 编辑器',
+      title: 'V 阅读器',
       autoHideMenuBar: true,
       icon: path.join(__dirname, 'public', 'icon.png'),
       webPreferences: {
@@ -237,7 +248,7 @@ if (!gotLock) {
     if (at) q.set('at', String(Math.round(Number(at) || 0)));
     const extra = new BrowserWindow({
       width: 1180, height: 860, minWidth: 860, minHeight: 560,
-      show: false, backgroundColor: '#efe9dc', title: 'V 编辑器（对照窗口）',
+      show: false, backgroundColor: '#efe9dc', title: 'V 阅读器（对照窗口）',
       autoHideMenuBar: true, icon: path.join(__dirname, 'public', 'icon.png'),
       webPreferences: { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, nodeIntegration: false, spellcheck: false, sandbox: false }
     });

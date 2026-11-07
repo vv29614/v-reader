@@ -1,4 +1,4 @@
-# V 编辑器
+# V 阅读器
 
 **一个本地优先的多格式文档阅读器 —— 读得舒服，记得下来，不上传任何东西。**
 
@@ -46,9 +46,9 @@ Windows 桌面应用（Electron）。PDF、EPUB、Word、Markdown、TXT、HTML�
 
 ## 下载与安装
 
-1. 到 [Releases](https://github.com/vv29614/v-editor/releases) 下载 `VEditor-Setup-1.1.0.exe`
+1. 到 [Releases](https://github.com/vv29614/v-reader/releases) 下载 `VReader-Setup-1.1.0.exe`
 2. 双击安装（可以选择安装位置，默认装到 `D:\VEditor`）
-3. 装完桌面会出现「V 编辑器」快捷方式
+3. 装完桌面会出现「V 阅读器」快捷方式
 
 不需要 Node.js，不需要联网，不需要注册。
 
@@ -270,7 +270,7 @@ Windows 桌面应用（Electron）。PDF、EPUB、Word、Markdown、TXT、HTML�
 **全部数据都在一个文件夹里：**
 
 ```
-%APPDATA%\V编辑器\data\
+%APPDATA%\V阅读器\data\
 ├─ shelf.json          # 书库清单（路径、标签、进度、星标）
 ├─ books/              # 每本书的笔记与书签
 ├─ settings.json       # 阅读设置、快捷键、AI 配置
@@ -299,7 +299,7 @@ A：PDF 是矢量渲染，缩放按倍率重绘；超过 200% 后受页面尺寸
 A：会提示「先在设置里填 AI 接口」并自动打开设置。检查接口地址、模型名、Key 三项；也确认网络能访问该接口。
 
 **Q：卸载后重装，书和笔记还在吗？**
-A：在。数据在 `%APPDATA%\V编辑器\data`，卸载不清空；但如果手动删了这个目录就没了，重要笔记建议定期拷一份。
+A：在。数据在 `%APPDATA%\V阅读器\data`，卸载不清空；但如果手动删了这个目录就没了，重要笔记建议定期拷一份。
 
 **Q：能在 Mac 或 Linux 上用吗？**
 A：目前只提供 Windows 包。源码是 Electron + 原生 JS，理论可以自己打包其他平台，但没做适配与测试。
@@ -311,8 +311,8 @@ A：目前只提供 Windows 包。源码是 Electron + 原生 JS，理论可以�
 **依赖**：Windows、Node.js ≥ 18（本机用 24）、npm
 
 ```bash
-git clone https://github.com/vv29614/v-editor.git
-cd v-editor
+git clone https://github.com/vv29614/v-reader.git
+cd v-reader
 npm install
 ```
 
@@ -335,7 +335,7 @@ npm run electron
 
 ```bash
 npm run dist
-# 产物：release/VEditor-Setup-<version>.exe
+# 产物：release/VReader-Setup-<version>.exe
 ```
 
 `electron-builder` 配置在 `package.json` 的 `build` 字段里；图标处理在 `scripts/afterPack.js`。
@@ -377,7 +377,7 @@ npm run dist
 
 Issue 和 PR 都欢迎。提 bug 时请附上：
 
-- Windows 版本、V 编辑器版本
+- Windows 版本、V 阅读器版本
 - 文件格式与大致大小（**不要上传有版权的书**，说明格式即可）
 - 复现步骤与截图
 

@@ -1,5 +1,5 @@
 {
-  "name": "v-editor",
+  "name": "v-reader",
   "version": "1.1.0",
   "description": "本地优先的多格式文档阅读器：PDF/EPUB/DOCX/Markdown/代码/漫画，可拖拽笔记卡片与分屏双开，可选 AI 阅读辅助。不上传、无账号、无遥测。",
   "main": "main.js",
@@ -33,15 +33,15 @@
     "marked": "^12.0.2",
     "pdfjs-dist": "^4.10.38"
   },
-  "productName": "V编辑器",
-  "homepage": "https://github.com/vv29614/v-editor",
+  "productName": "V阅读器",
+  "homepage": "https://github.com/vv29614/v-reader",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vv29614/v-editor.git"
+    "url": "https://github.com/vv29614/v-reader.git"
   },
   "build": {
     "appId": "com.veditor.app",
-    "productName": "V编辑器",
+    "productName": "V阅读器",
     "copyright": "Copyright © 2026 V Editor",
     "directories": {
       "output": "release",
@@ -67,7 +67,7 @@
         }
       ],
       "icon": "build/icon.ico",
-      "artifactName": "VEditor-Setup-${version}.${ext}",
+      "artifactName": "VReader-Setup-${version}.${ext}",
       "signAndEditExecutable": false
     },
     "nsis": {
@@ -77,8 +77,8 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "V 编辑器",
-      "uninstallDisplayName": "V 编辑器",
+      "shortcutName": "V 阅读器",
+      "uninstallDisplayName": "V 阅读器",
       "deleteAppDataOnUninstall": false
     },
     "afterPack": "scripts/afterPack.js"

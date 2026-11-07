@@ -1,4 +1,4 @@
-/* V 编辑器 · 主程序 */
+/* V 阅读器 · 主程序 */
 import { $, $$, el, toast, debounce, clamp, throttle, fmtSize, fmtDate, extOf, baseName, kindOf, coverColors, TYPE_LABEL, IMAGE_EXT, CODE_EXT, decodeText, getCover, putCover, delCover, copyText, hashId } from './util.js';
 import { api, store } from './store.js';
 import { createFlowViewer } from './viewers/flow.js';
@@ -1577,11 +1577,11 @@ async function runTranslate() {
 const GUIDE_PAGES = [
   /* ───────── 入门 ───────── */
   {
-    section: '入门', icon: '📖', title: 'V 编辑器是什么',
+    section: '入门', icon: '📖', title: 'V 阅读器是什么',
     desc: '一个本地阅读器 + 笔记工具：书在你自己的电脑上，笔记、进度、设置也都在本机，不上传不联网（除了你自己配的 AI）。',
     points: [
       '支持 txt / md / pdf / epub，另外也能打开 html、csv、图片、代码文件',
-      '数据存在用户目录（默认 D:\\Roaming\\V编辑器\\data），覆盖安装不会丢书',
+      '数据存在用户目录（默认 D:\\Roaming\\V阅读器\\data），覆盖安装不会丢书',
       '首次打开会自动讲一遍这些说明，之后在设置最下面「帮助 → 用法说明」还能重看',
       '窗口置顶按钮可以让它压在别的软件上面读'
     ]
@@ -1840,7 +1840,7 @@ const GUIDE_PAGES = [
     section: '其他', icon: '💾', title: '数据在哪、怎么搬走',
     desc: '所有东西都在一个文件夹里，拷走就等于备份。',
     points: [
-      '数据目录：默认在用户目录下的「V编辑器\\data」，包含书库清单、笔记、进度、设置',
+      '数据目录：默认在用户目录下的「V阅读器\\data」，包含书库清单、笔记、进度、设置',
       '想便携：在程序目录放一个 portable.txt，数据就改用程序旁边的 data 文件夹',
       '换电脑：把整个 data 文件夹拷到新机器同一位置即可，书路径变了需要重新导入',
       '覆盖安装升级不会清空这个目录（安装前建议还是备份一份）'
@@ -3551,7 +3551,7 @@ function buildNotesMarkdown() {
   const bms = (state.bookmarks || []).slice().sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
   const lines = [];
   lines.push(`# ${book.name.replace(/\.[^.]+$/, '')} · 读书笔记`, '');
-  lines.push(`> 导出自 V 编辑器 · ${new Date().toLocaleString('zh-CN')}`, '');
+  lines.push(`> 导出自 V 阅读器 · ${new Date().toLocaleString('zh-CN')}`, '');
   if (notes.length) {
     lines.push(`## 标注与笔记（${notes.length}）`, '');
     notes.forEach((m, i) => {
@@ -4104,7 +4104,7 @@ function bindSettings() {
     if (!window.desktop?.associate) { toast('仅桌面版支持文件关联'); return; }
     try {
       const r = await window.desktop.associate();
-      toast(r && r.ok ? '已关联，双击常见文档会用V 编辑器打开' : '关联失败：' + (r && r.error), 4000);
+      toast(r && r.ok ? '已关联，双击常见文档会用V 阅读器打开' : '关联失败：' + (r && r.error), 4000);
     } catch (e) { toast('关联失败：' + e.message, 4000); }
   });
   $('#set-tts-auto').addEventListener('change', (e) => set('ttsAuto', e.target.checked));
